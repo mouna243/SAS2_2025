@@ -3,7 +3,7 @@ int main (){
     // Challenge 1 : Affichage Informations
     printf ("entre le nom complet :");
     printf ("entrer le sexe  :");
-    printf ("entrer le seail  :");
+    printf ("entrer le mail  :");
     // Challenge 2 : Conversion de la température
     float K ,C;
     printf ("Entrer la température en Celsius : ");scanf ("%f", C);
