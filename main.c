@@ -24,8 +24,9 @@ int main (){
     //Challenge 4 : Conversion de la vitesse
     double Kmh ,ms;
     printf("entrer la vitesse en kilomètres par heure (km/h) "); scanf("%lf",&Kmh);
-    ms = kmh* 0.27778;
+    ms = Kmh * 0.27778;
     printf ("%lf km/h = %lf m/s");
+   
     //Challenge 6 : Calcul et affichage des résultats
     int a,b;
     printf ("Entrer un nomber A  : ");scanf ("%f", &a);
@@ -45,7 +46,7 @@ printf ("Moyenne_géométrique = (a * b * c)^(1/3) = %f ",Moyenne_géométrique)
 //Challenge 10 : Volume d'une sphère
 float r ,Volume , π =3.14 ;
 printf ("Entrer rayon de la sphère: ");scanf ("%f",&r);
-Volume = (4/3) * π * r^(3);
+Volume = (4/3) * π * r^(3) ;
 printf (" le volume d'une sphère est : %f", Volume);
 //Challenge 11 : Surface d'un rectangle
 float S,L,l ;
@@ -54,5 +55,16 @@ printf ("entrer la largeur : ");scanf("%f",&l);
 S=L*l;
 printf ("la surface = %f",S );
 
-
+ //Challenge 5 : Affichage Température
+    float c;
+    printf("Entrer la température en Celsius : "); scanf ("%d",&c);
+    if (c<0)
+    {
+       printf("solide");
+    }else if (0<= c && c<100){
+       printf("Liquide");
+     }else   
+    printf("Gaz");
+     }
+return 0;
 }
