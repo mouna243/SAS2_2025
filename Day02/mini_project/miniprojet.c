@@ -1,6 +1,6 @@
-// Online C compiler to run C program online
+// le mini projet
 #include <stdio.h>
-
+#include <string.h>
 int main() {
   int num_livre =100;
   int num_titre = 50;
@@ -91,7 +91,7 @@ int main() {
           
             
             for (int i = 0; i < nomberlivre; i++) {
-                if (livrerech == titre[i]) {
+                if (strcmp (livrerech , titre[i])==0) {
                     printf ("les donner de livre trouver : \n");
                     printf("le Titre: %s , l'Auteur: %s ,le Prix: %.2f , la Quantite: %d\n",
                        titre[i], auteur[i], prix[i], quantite[i]);
@@ -115,7 +115,8 @@ int main() {
             int nouvelleQuantite;
             char *titrerech;
             printf("Titre du livre : ");
-            scanf("%d", &titrerech);                        if (nomberlivre == 0) {
+            scanf("%d", &titrerech);                        
+            if (nomberlivre == 0) {
                 printf("Aucun livre dans le stock.\n");
                 continue;
             }
@@ -123,7 +124,7 @@ int main() {
             
             // Boucle pour trouver le livre
             for (int i = 0; i < nomberlivre; i++) {
-                if (titrerech == titre[i]) {
+             if (strcmp (livrerech , titre[i])==0) {
                     printf("Livre trouve : %s\n", titre);
                     printf("Nouvelle quantite : ");
                     scanf("%d", &nouvelleQuantite);
