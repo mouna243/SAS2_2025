@@ -1,19 +1,25 @@
 // Challenge 9 : Suppression des Espaces
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-int main() {
-    char phrase[100];
-    printf ("entrer une phrase : ") ; 
-    fgets (phrase , 100 , stdin ); 
-    char espace = ' ';
-    for (int i = 0 ; i <= 100 ; i++){
-        if (espace == phrase[i] ){
-            espace = '\0';
-        }
-    }
-     printf ("a%sb ", espace);
-       printf("phrase sans espace : %s\n", phrase);
- return 0;
- 
-}
+# include <stdio.h>
+# include <string.h>
+ int main ()
+ {   
+     char phrase [50];
+     
+     printf ("entrer une phrase :"); 
+    //  scanf(" %[^\n]", phrase);
+     fgets (phrase ,50, stdin);
+     if (phrase == '\0') {
+         printf ("aucune valeur ");
+     }else {
+     int size = sizeof (phrase)/sizeof (phrase[0]);
+     
+     for (int j =0; j<size ; j++){
+         if ( phrase [j] == ' '){
+             phrase[j] = phrase[j-1] ; 
+               printf ("%s" , phrase);
+         }
+     }
+     }
+     
+    
+ }

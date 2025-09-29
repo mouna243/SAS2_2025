@@ -5,35 +5,33 @@
 
 struct Contact
 {
-    char numtele[40];
+    char numtele[20];
     char email[40];
     char nom[40];
 };
 int main()
 {
     struct Contact c[MAX];
-    int choix;
-    int count = 0;
     char nomdelet[20];
     char nomedite[20];
     char nomrech[20];
-     int trouve =0 ;
+    int choix = 0;
+    int count = 0;
+    int trouve =0;
     // menu
     while (1)
     {
-
+     
         printf("========choisie un nomber ========= \n");
         printf("1. Ajouter un Contact \n2. Modifier un Contact\n3. Supprimer un Contact\n4. Afficher Tous les Contacts \n5. Rechercher un Contact\n6.Quitter\n");
         printf("votre choix : ");
         scanf("%d", &choix);
         // AJOUTER **
-        if (choix == 1)
-
-        {
+        if (choix == 1){ 
 
             if (count > MAX)
             {
-                printf("!!!!!!!!!!! Le stockage est saturer !!!!!!!!");
+                printf("!!!!!!! Le stockage est saturer !!!!!!");
             }
             else
             {
@@ -43,10 +41,11 @@ int main()
                 scanf("%s", &c[count].nom);
                 printf("Entrer le numero de telephone :");
                 scanf("%s", &c[count].numtele);
-                printf("Entrer le e-mail de contacte sans '@gmail.com' :");
+                printf("Entrer le e-mail de contacte sans '@gmail.com:");
                 scanf("%s", &c[count].email);
                 printf("Le contacte est enregistrer avec succee !! (^-^) \n");
                 count++;
+                continue;
             }
         }
         // modifier**
@@ -76,7 +75,7 @@ int main()
         {
             int find =0;
             printf("Entrer le nom que vous pouvez supprimer : ");
-            scanf("%s", &nomdelet);
+            scanf("%s", nomdelet);
             for (int i = 0; i < count; i++)
             {
                 if (strcmp(nomdelet, c[i].nom) == 0)
@@ -85,11 +84,11 @@ int main()
                     for (int j = i; j < count - 1 ; j++)
                     {
                          c[j] = c[j+1];
-
-                         count--;
-                    }
+                         
                     printf("Le contacte a été supprimer (^-^)v \n");
                     break;
+                    }
+                    count--;
                 }else if (!find){
                     printf("Aucun result !!\n");
                 }
@@ -101,14 +100,13 @@ int main()
 
             printf("========TOUT LES CONTACTES=======\n");
 
-            for (int i = 0; i < count; i++)
-            {
                 if (count == 0)
                 {
                     printf("|AUCUN           |AUCUN              |AUCUN \n");
                 }
-                else
-                {
+                else {
+            for (int i = 0; i < count; i++)
+            {
                     printf("|NOM :%s   |NUMERO : %s    | EMAIL :%s @gmail.com\n", c[i].nom, c[i].numtele, c[i].email);
                 }
             }
