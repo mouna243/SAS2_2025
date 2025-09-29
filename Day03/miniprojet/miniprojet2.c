@@ -39,10 +39,14 @@ int main()
                 printf("======LES INFORMATION DE NUMBER======\n");
                 printf("Entrer le nom de contacte :");
                 scanf("%s", &c[count].nom);
-                printf("Entrer le numero de telephone :");
-                scanf("%s", &c[count].numtele);
                 printf("Entrer le e-mail de contacte sans '@gmail.com:");
                 scanf("%s", &c[count].email);
+                printf("Entrer le numero de telephone :");
+                scanf("%s", &c[count].numtele);
+                if (strlen (c[count].numtele)== 10 && c[count].numtele[0]== '0'){
+                }else {
+                    break ; 
+                }
                 printf("Le contacte est enregistrer avec succee !! (^-^) \n");
                 count++;
                 continue;
