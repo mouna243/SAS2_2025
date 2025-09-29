@@ -22,7 +22,7 @@ int main()
     while (1)
     {
      
-        printf("========choisie un nomber ========= \n");
+        printf("======== choisie un nomber ======= \n");
         printf("1. Ajouter un Contact \n2. Modifier un Contact\n3. Supprimer un Contact\n4. Afficher Tous les Contacts \n5. Rechercher un Contact\n6.Quitter\n");
         printf("votre choix : ");
         scanf("%d", &choix);
@@ -41,12 +41,11 @@ int main()
                 scanf("%s", &c[count].nom);
                 printf("Entrer le e-mail de contacte sans '@gmail.com:");
                 scanf("%s", &c[count].email);
+                do {
                 printf("Entrer le numero de telephone :");
                 scanf("%s", &c[count].numtele);
-                if (strlen (c[count].numtele)== 10 && c[count].numtele[0]== '0'){
-                }else {
-                    break ; 
-                }
+                }while(strlen (c[count].numtele)!= 10 || c[count].numtele[0]!= '0');
+               
                 printf("Le contacte est enregistrer avec succee !! (^-^) \n");
                 count++;
                 continue;
