@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <ctype.h>
 #define MAX 100
 
 struct Contact
@@ -19,13 +19,17 @@ int main()
     int count = 0;
     int trouve =0;
     // menu
-    while (1)
+    while(1)
     {
-     
+            int com = 0;
+       do {
         printf("======== choisie un nomber ======= \n");
-        printf("1. Ajouter un Contact \n2. Modifier un Contact\n3. Supprimer un Contact\n4. Afficher Tous les Contacts \n5. Rechercher un Contact\n6.Quitter\n");
+        printf("1. Ajouter un Contact \n2. Modifier un Contact\n3. Supprimer un Contact\n4. Afficher Tous les Contacts \n5. Rechercher un Contact\n6. Quitter\n");
         printf("votre choix : ");
         scanf("%d", &choix);
+        if (getchar() != 0){
+            com = 1;
+        }}while (!com );
         // AJOUTER **
         if (choix == 1){ 
 
@@ -64,10 +68,12 @@ int main()
                     printf("Entrer la nouvelle valeur : \n");
                     printf("Entrer le nouveau nom de contacte :");
                     scanf("%s", &c[i].nom);
-                    printf("Entrer le nouveau numero de telephone :");
-                    scanf("%s", &c[i].numtele);
                     printf("Entrer le nouveau e-mail de contacte sans '@gmail.com' :");
                     scanf("%s", &c[i].email);
+                    do {
+                    printf("Entrer le nouveau numero de telephone :");
+                    scanf("%s", &c[i].numtele);
+                    }while (strlen (c[i].numtele)!= 10 || c[i].numtele[0]!= '0');
                     printf("Le contacte a été modifier avec succee !! (^-^) \n");
                 }else if (!trouve){
                     printf("aucun contacte \n");
@@ -123,7 +129,7 @@ int main()
             {
                 if (strcmp(nomrech, c[i].nom) == 0)
                 {
-                    printf("le nom :%s  ;le numero : %s ;Email %s @gmail.com\n", c[i].nom, c[i].numtele, c[i].email);
+                    printf("\n le nom :%s  ;le numero : %s ;Email %s @gmail.com\n", c[i].nom, c[i].numtele, c[i].email);
                     break;
                 }
                 else if (strcmp(nomrech, c[i].nom) != 0)
@@ -144,4 +150,5 @@ int main()
             printf("Entrer un nomber parmie les choix\n");
         }
     }
+    
 }
