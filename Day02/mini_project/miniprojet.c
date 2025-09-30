@@ -14,6 +14,7 @@ int main() {
     int id [num_livre];
     int nouvelleQuantite;
     int trouver = 0;
+    char livresupp[20];
     
     int nomberlivre=0;
     int choix ;
@@ -139,6 +140,16 @@ int main() {
          }
     //Supprimer un livre
          else if (choix == 5){
+            printf ("Entrer la valeur que vous pouver supprimer :");
+            scanf ("%s" ,&livresupp);
+            for (int i =0 ; i <nomberlivre ; i++ )
+            if (strcmp (livresupp , titre)){
+                printf("le livre a été supprimer !!!")
+                for (int j =i ; j <nomberlivre+1 ; j++){
+                    
+                }
+
+            }
             
             
         
